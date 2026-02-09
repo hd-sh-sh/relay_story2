@@ -1,0 +1,13 @@
+{
+  "name": "relay-story-maker",
+  "version": "1.0.0",
+  "description": "AI 릴레이 동화 만들기 웹앱",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build needed for static site'",
+    "start": "vercel dev"
+  },
+  "keywords": ["ai", "story", "education"],
+  "author": "",
+  "license": "MIT"
+}
