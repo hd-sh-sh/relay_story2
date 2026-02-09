@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI를 활용한 릴레이 동화 만들기 웹앱">
+    <title>✨ AI 릴레이 동화 만들기 ✨</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✨ AI 릴레이 동화 만들기 ✨</h1>
+            <p class="subtitle">팀에 데이터를 입력하고 생성 버튼을 눌러 각 팀의 동화를 만들어보세요!</p>
+        </header>
+
+        <div class="main-content">
+            <!-- API Key Section -->
+            <div class="api-key-section">
+                <label for="apiKey">🔑 Anthropic API Key</label>
+                <input type="password" id="apiKey" placeholder="sk-ant-...">
+                <small>동화와 삽화 생성을 위해 Anthropic API 키가 필요합니다. <a href="https://console.anthropic.com/" target="_blank">API 키 발급받기</a></small>
+            </div>
+
+            <!-- 주인공 정하기 -->
+            <div class="section-title">
+                🎭 주인공 정하기
+            </div>
+            <table>
+                <tr>
+                    <th>선택지</th>
+                    <th>A팀</th>
+                    <th>B팀</th>
+                </tr>
+                <tr>
+                    <td>종류</td>
+                    <td class="team-a-cell">사람</td>
+                    <td class="team-b-cell">동물</td>
+                </tr>
+                <tr>
+                    <td>나라 또는 동물종류</td>
+                    <td class="team-a-cell">한국</td>
+                    <td class="team-b-cell">고양이</td>
+                </tr>
+                <tr>
+                    <td>어린이,성인</td>
+                    <td class="team-a-cell">9살</td>
+                    <td class="team-b-cell">아기</td>
+                </tr>
+                <tr>
+                    <td>성격 및 특징</td>
+                    <td class="team-a-cell">장난꾸러기</td>
+                    <td class="team-b-cell">호기심 많음</td>
+                </tr>
+            </table>
+
+            <!-- 키워드 정하기 -->
+            <div class="section-title">
+                🖊️ 키워드 정하기
+            </div>
+            <table>
+                <tr>
+                    <th>키워드순서</th>
+                    <th>A팀</th>
+                    <th>B팀</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td class="team-a-cell">학교</td>
+                    <td class="team-b-cell">쥐</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td class="team-a-cell">다툼</td>
+                    <td class="team-b-cell">늘잠</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td class="team-a-cell">화가났음</td>
+                    <td class="team-b-cell">숲은</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td class="team-a-cell">금식</td>
+                    <td class="team-b-cell">친구</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td class="team-a-cell">친구</td>
+                    <td class="team-b-cell">아빠</td>
+                </tr>
+            </table>
+
+            <div class="button-container">
+                <button class="btn-team-a" onclick="generateStory('A')">
+                    🎨 A팀 동화 생성하기
+                </button>
+                <button class="btn-team-b" onclick="generateStory('B')">
+                    🎨 B팀 동화 생성하기
+                </button>
+            </div>
+
+            <div class="error-message" id="errorMessage"></div>
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>동화를 만들고 있습니다... 잠시만 기다려주세요!</p>
+            </div>
+
+            <div class="story-output" id="storyOutput"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
